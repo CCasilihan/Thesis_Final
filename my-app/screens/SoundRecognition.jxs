@@ -1,0 +1,25 @@
+// import { extractFeatures, trainModel, predictEmotion } from './screens/StartRecordings';
+
+
+// // This file contains functions for sound recognition
+
+// // Function to extract features from audio data
+// export const extractFeatures = (audioData) => {
+//     // Implement feature extraction logic here
+//     return 'extracted_features';
+//   };
+  
+//   // Function to train the machine learning model
+//   export const trainModel = () => {
+//     // Implement model training logic here
+//     return 'trained_model';
+//   };
+  
+//   // Function to predict emotion using the trained model and extracted features
+//   export const predictEmotion = (model, features) => {
+//     // Implement emotion prediction logic here
+//     return 'predicted_emotion';
+//   };
+
+//   export default soundRecognition;
+  

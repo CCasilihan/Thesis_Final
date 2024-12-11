@@ -5,7 +5,7 @@ import requests
 url = 'http://127.0.0.1:5000/predict'
 
 # Path to the folder containing the audio files you want to test
-folder_path = r'C:\Users\charisse\Desktop\Thesis_Bark_Recognition\backend\dataset'
+folder_path = r'C:\Users\charisse\Desktop\Thesis_Bark_Recognition - Copy\backend\dataset'
 
 # Ensure the folder exists
 if not os.path.exists(folder_path):
@@ -24,9 +24,50 @@ for filename in wav_files:
     with open(file_path, 'rb') as f:
         files = {'file': f}
         response = requests.post(url, files=files)
+        
+        # Check if the response was successful
+        if response.status_code == 200:
+            # Print the response from the server
+            print(f"File: {filename}, Response: {response.json()}")
+        else:
+            print(f"File: {filename}, Error: {response.json()}")
+
+
+
+
+
+
+
+
+# import os
+# import requests
+
+# # URL of the Flask application
+# url = 'http://127.0.0.1:5000/predict'
+
+# # Path to the folder containing the audio files you want to test
+# folder_path = r'C:\Users\charisse\Desktop\Thesis_Bark_Recognition - Copy\backend\dataset'
+
+# # Ensure the folder exists
+# if not os.path.exists(folder_path):
+#     print(f"Folder '{folder_path}' does not exist.")
+#     exit()
+
+# # List all files in the folder
+# files = os.listdir(folder_path)
+
+# # Filter only .wav files
+# wav_files = [f for f in files if f.endswith('.wav')]
+
+# # Iterate over each .wav file and send it to the server for prediction
+# for filename in wav_files:
+#     file_path = os.path.join(folder_path, filename)
+#     with open(file_path, 'rb') as f:
+#         files = {'file': f}
+#         response = requests.post(url, files=files)
     
-    # Print the response from the server
-    print(f"File: {filename}, Response: {response.json()}")
+#     # Print the response from the server
+#     print(f"File: {filename}, Response: {response.json()}")
 
 
 
